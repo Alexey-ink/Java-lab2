@@ -61,6 +61,11 @@ public class CustomCircularQueue<T> implements Iterable<T> {
         return elements[head];
     }
 
+    public void clear() {
+        Arrays.fill(elements, null);
+        head = tail = size = 0;
+    }
+
     @Override
     public Iterator<T> iterator() {
         return new Iterator<T>() {
@@ -105,6 +110,9 @@ public class CustomCircularQueue<T> implements Iterable<T> {
         for (int value : queue) {
             System.out.println("Queue element: " + value);
         }
+
+        queue.clear();
+        queue.remove(); // exception
     }
 }
 

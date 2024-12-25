@@ -118,6 +118,17 @@ public class CustomCircularQueueTest {
     }
 
     @Test
+    public void testClear() {
+        CustomCircularQueue<Integer> queue = new CustomCircularQueue<>(3);
+        queue.add(1);
+        queue.add(2);
+        queue.add(3);
+        queue.clear();
+        assertTrue(queue.isEmpty());
+        assertEquals(0, queue.size());
+    }
+
+    @Test
     void testIteratorEmptyQueue() {
         CustomCircularQueue<Integer> queue = new CustomCircularQueue<>(3);
 
